@@ -23,6 +23,7 @@ const AddExpenseModal = ({ isOpen, onClose }) => {
             payload: newExpense
         })
         onClose();
+        alert("هزینه شما ثبت شد")
     }
 
     if (!isOpen) return null;
@@ -32,7 +33,7 @@ const AddExpenseModal = ({ isOpen, onClose }) => {
             <h2 className="text-lg font-bold mb-4 text-center">افزودن هزینه جدید</h2>
 
             <form className="flex gap-2.5 flex-col  items-center" onSubmit={handleSubmit}>
-                <textarea ref={amountRef} type="number" placeholder="مبلغ را به تومان وارد کنید" className="border-1 w-[90%] h-[38px] rounded p-[3px] "></textarea>
+                <textarea required ref={amountRef} type="number" placeholder="مبلغ را به تومان وارد کنید" className="border-1 w-[90%] h-[38px] rounded p-[3px] "></textarea>
                 <select ref={categoryRef} className=" p-[3px] w-[90%] border-1 rounded h-[38px]" required>
                     <option value="">انتخاب دسته‌بندی</option>
                     <option value="پوشاک">پوشاک</option>

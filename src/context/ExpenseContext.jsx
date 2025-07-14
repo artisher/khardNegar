@@ -15,6 +15,12 @@ const reducer = (state, action) => {
         case "CLEAR":
             return []
 
+        case "DELETE":
+
+            const filtered = state.filter(exp => exp.id !== action.payload);
+            localStorage.setItem("expenses", JSON.stringify(filtered));
+            return filtered;
+
         default:
             return state;
     }

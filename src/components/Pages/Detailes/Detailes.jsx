@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ExpenseContext } from "../../../context/ExpenseContext";
 
 const Detailes = () => {
-
+    const { dispatch } = useContext(ExpenseContext)
     const getBadge = (category) => {
         switch (category) {
             case "پوشاک":
@@ -44,10 +44,15 @@ const Detailes = () => {
                                 style={{ backgroundColor: `${color}6D` }} // معادل سبز با 30% شفافیت
                             >
                                 <span>{emoji}</span>
+
                             </div>
                         </div>
                     </div>
-                    <p className="text-right text-[#d3d3d3] font-bold">{expense.date}</p>
+                    <div className="flex justify-between">
+                        <button className="text-[#d3d3d3] " onClick={() => dispatch({ type: "DELETE", payload: expense.id })}>حذف هزینه</button>
+                        <p className="text-right text-[#d3d3d3] font-bold">{expense.date}</p>
+                    </div>
+
 
 
                 </div>
