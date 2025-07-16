@@ -27,8 +27,8 @@ const AddExpenseModal = ({ isOpen, onClose }) => {
     }
 
     if (!isOpen) return null;
-    return (<div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-        <div className="bg-white rounded-xl shadow-lg w-[90%] relative pt-[5px]">
+    return (<div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 " >
+        <div className="bg-white rounded-xl shadow-lg w-[90%] relative pt-[5px] lg:w-[40%]">
             <button onClick={onClose} className="absolute top-2 right-2 text-gray-600 hover:text-black">✕</button>
             <h2 className="text-lg font-bold mb-4 text-center">افزودن هزینه جدید</h2>
 
@@ -44,7 +44,7 @@ const AddExpenseModal = ({ isOpen, onClose }) => {
                     <option value="قصد">قصد</option>
                 </select>
                 <input ref={descRef} type="text" placeholder="توضیح (اختیاری)" className="w-[90%] h-[38px] border rounded p-2 mb-3" />
-                <button className="w-[90%] bg-[#0c2f59] text-white py-2 rounded mb-5" type="submit">ثبت هزینه</button>
+                <button type="submit" className="w-[90%] bg-[#0c2f59] text-white py-2 rounded mb-5 hover:bg-[#0c1459] hover:text-[#fff] transition duration-300 ease-in-out hover:scale-105 ">ثبت هزینه</button>
             </form>
         </div>
 

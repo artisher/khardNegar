@@ -10,12 +10,14 @@ const App = () => {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={
-                    <>
-                        
+                    <div>
+
                         <Costs />
-                        <Chart />
-                        <TodayCosts />
-                    </>} />
+                        <div className="flex flex-wrap">
+                            <Chart />
+                            <TodayCosts />
+                        </div>
+                    </div>} />
                 <Route path="/detailes" element={<Detailes />} />
             </Routes>
         </BrowserRouter>

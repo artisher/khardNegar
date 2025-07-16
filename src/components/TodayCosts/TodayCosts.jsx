@@ -24,8 +24,8 @@ const TodayCosts = () => {
     const todayExpenses = expenses.filter(exp => exp.date === today);
 
 
-    return (<div className=" bg-[#0c2f59] mt-[30px] flex flex-col gap-6 pb-[30px]  pt-[10px]">
-        <h1 className="text-center text-[25px] text-[#f2fcff]">: لیست هزینه های امروز</h1>
+    return (<div className=" bg-[#0c2f59]  w-full flex flex-col gap-6 pb-[30px]  pt-[10px] lg:w-[50%] lg:gap-12">
+        <h1 className="text-center text-[25px] text-[#f2fcff] ">: لیست هزینه های امروز</h1>
         <ul className="text-center text-[#f2fcff]">
             {todayExpenses.length === 0 ? (<p>موردی برای نمایش وجود نداره</p>) : (
                 todayExpenses.map((exp, i) => (

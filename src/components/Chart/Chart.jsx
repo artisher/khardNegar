@@ -31,17 +31,17 @@ const Chart = () => {
         { name: "سرگرمی", amount: sums["سرگرمی"] || 0, color: "#facc15" },
     ];
     return (
-        <div className="w-full h-64 p-[1px]">
+        <div className="w-full h-84 pb-[6px] pt-10  p-[1px] bg-[#0c2f59]  lg:w-[50%] lg:pt-4 border-b-2 border-white lg:border-0">
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                     data={data}
                     margin={{ top: 20, right: 10, left: 10, bottom: 5 }}
                 >
                     <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
+                    <XAxis dataKey="name" tick={{ fontSize: 12, fill: "#fff" }} />
                     <YAxis domain={[100000, 10000000]} // حداقل تا حداکثر عدد
                         tickFormatter={(value) => `${value.toLocaleString()} تومان`} // فرمت اعداد
-                        tick={{ fontSize: 12, fill: "#4b5563" }} />
+                        tick={{ fontSize: 12, fill: "#fff" }} />
                     <Tooltip />
                     <Bar
                         dataKey="amount"
@@ -63,14 +63,19 @@ const Chart = () => {
 };
 
 export default Chart;
+
+
+
+
+
 const CustomLabel = ({ x, y, width, value }) => {
     return (
         <text
-            x={x + width / 2}      
-            y={y - 10}              
-            fill="#333"
-            fontSize={12}
-            textAnchor="middle"     
+            x={x + width / 2}
+            y={y - 10}
+            fill="#fff"
+            fontSize={14}
+            textAnchor="middle"
         >
             {value.toLocaleString("en-US")}
         </text>
@@ -79,10 +84,11 @@ const CustomLabel = ({ x, y, width, value }) => {
 
 const CustomBarShape = (props) => {
     const { fill, x, y, width, height } = props;
-    const radius = 10;
+    const radius = 12;
 
     return (
         <path
+
             d={`
         M${x},${y + height}
         Q${x + width / 2},${y - radius}
