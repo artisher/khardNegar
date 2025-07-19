@@ -71,9 +71,9 @@ const Detailes = () => {
 
     return (
         <div>
-            <div className="bg-[#29336b] text-white pb-[30px] border-b-3">
+            <div className="bg-[#29336b] text-white pb-[30px] border-b-3 ">
                 <h1 className="text-center text-white text-[26px] pt-3.5">جزئیات هزینه ها</h1>
-                <div className="flex gap-4 px-3">
+                <div className="flex gap-4 px-3 lg:justify-center lg:mt-10 ">
 
 
                     <div className="flex gap-3.5 ">
